@@ -10,8 +10,6 @@ onready var crop_sprite: Sprite3D = $CropSprite
 onready var decay_sprite: Sprite3D = $DecaySprite
 onready var decay_progress: TextureProgress = $Viewport/TextureProgress
 
-func _ready():
-	_set_crop_type(CROP_DATA.CROPS.WHEAT)
 
 func decay_tick():
 	if crop_type != CROP_DATA.CROPS.NONE:
