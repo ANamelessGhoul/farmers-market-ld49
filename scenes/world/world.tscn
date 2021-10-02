@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://sprites/objects/ground.png" type="Texture" id=1]
 [ext_resource path="res://scenes/shop/shop.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/plot/plot.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sprites/crops/wheat/WheatIcon.png" type="Texture" id=5]
+[ext_resource path="res://scenes/world/baskets.gd" type="Script" id=4]
 [ext_resource path="res://scenes/basket/basket.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/inventory_crop/inventory_crop.tscn" type="PackedScene" id=7]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 50, 50 )
@@ -109,21 +110,75 @@ crop_type = 2
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -4 )
 crop_type = 3
 
-[node name="Inventories" type="Spatial" parent="."]
+[node name="Baskets" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16 )
+script = ExtResource( 4 )
 
-[node name="Basket" parent="Inventories" instance=ExtResource( 6 )]
+[node name="LeftBasket" parent="Baskets" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 0, 0 )
 
-[node name="Basket2" parent="Inventories" instance=ExtResource( 6 )]
+[node name="RightBasket" parent="Baskets" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 0 )
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, -10, 0.548717, 15.1644 )
-axis = 1
-texture = ExtResource( 5 )
+[node name="Inventory" type="Spatial" parent="Baskets"]
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -7, 1.45, -9.53674e-07 )
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, -10, 0.548717, 16.7628 )
-axis = 1
-texture = ExtResource( 5 )
+[node name="InventoryCrop" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, 0, -0.744 )
+
+[node name="InventoryCrop2" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, 0, 0.75 )
+
+[node name="InventoryCrop3" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, -0.744 )
+
+[node name="InventoryCrop4" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 0.75 )
+
+[node name="InventoryCrop5" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.744 )
+
+[node name="InventoryCrop6" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75 )
+
+[node name="InventoryCrop7" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, -0.744 )
+
+[node name="InventoryCrop8" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 0.75 )
+
+[node name="InventoryCrop9" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 0, -0.744 )
+
+[node name="InventoryCrop10" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 0, 0.75 )
+
+[node name="InventoryCrop11" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2, 0, -0.744 )
+
+[node name="InventoryCrop12" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2, 0, 0.750001 )
+
+[node name="InventoryCrop13" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6, 0, -0.744 )
+
+[node name="InventoryCrop14" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6, 0, 0.750001 )
+
+[node name="InventoryCrop15" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -0.744 )
+
+[node name="InventoryCrop16" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0.750001 )
+
+[node name="InventoryCrop17" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4, 0, -0.744 )
+
+[node name="InventoryCrop18" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4, 0, 0.750001 )
+
+[node name="InventoryCrop19" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8, 0, -0.744 )
+
+[node name="InventoryCrop20" parent="Baskets/Inventory" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8, 0, 0.750001 )

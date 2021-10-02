@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "InventoryCrop",
+"language": "GDScript",
+"path": "res://scenes/inventory_crop/inventory_crop.gd"
+} ]
+_global_script_class_icons={
+"InventoryCrop": ""
+}
+
 [application]
 
 config/name="LudumDare49"
@@ -18,6 +28,7 @@ config/icon="res://icon.png"
 
 GameLoop="*res://autoload/game_loop.gd"
 Market="*res://autoload/market.gd"
+Inventory="*res://autoload/inventory.gd"
 
 [display]
 
