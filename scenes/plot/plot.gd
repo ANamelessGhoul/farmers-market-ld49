@@ -18,7 +18,7 @@ func _ready():
 	_set_crop_type(crop_type)
 
 func harvest():
-	_set_growth_stage(0)
+	Inventory.add_crop(crop_type)
 
 func grow():
 	if growth_stage == MAX_GROWTH:
