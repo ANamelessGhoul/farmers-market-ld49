@@ -1,0 +1,147 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 50, 50 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 25, 25, 1 )
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="QuadMesh" id=6]
+
+[sub_resource type="ViewportTexture" id=7]
+viewport_path = NodePath("FarmShops/Viewport")
+
+[sub_resource type="SpatialMaterial" id=8]
+resource_local_to_scene = true
+albedo_texture = SubResource( 7 )
+
+[sub_resource type="CubeMesh" id=5]
+
+[node name="World" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 10, 23 )
+current = true
+
+[node name="Floor" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="FarmPlots" type="Spatial" parent="."]
+
+[node name="FarmPlot" type="MeshInstance" parent="FarmPlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 4 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="FarmPlot5" type="MeshInstance" parent="FarmPlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 4 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="FarmPlot2" type="MeshInstance" parent="FarmPlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 4 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="FarmPlot10" type="MeshInstance" parent="FarmPlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 10 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="FarmPlot11" type="MeshInstance" parent="FarmPlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 10 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="FarmPlot12" type="MeshInstance" parent="FarmPlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 10 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="FarmPlot3" type="MeshInstance" parent="FarmPlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 4 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="FarmPlot4" type="MeshInstance" parent="FarmPlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 4 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="FarmPlot6" type="MeshInstance" parent="FarmPlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, 4 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="FarmPlot7" type="MeshInstance" parent="FarmPlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 10 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="FarmPlot8" type="MeshInstance" parent="FarmPlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 10 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="FarmPlot9" type="MeshInstance" parent="FarmPlots"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, 10 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="FarmShops" type="Spatial" parent="."]
+
+[node name="Shop" type="MeshInstance" parent="FarmShops"]
+transform = Transform( 4, 0, 0, 0, 5, 0, 0, 0, 1, -15, 5, -4 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Shop2" type="MeshInstance" parent="FarmShops"]
+transform = Transform( 4, 0, 0, 0, 5, 0, 0, 0, 1, -5, 5, -4 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Shop3" type="MeshInstance" parent="FarmShops"]
+transform = Transform( 4, 0, 0, 0, 5, 0, 0, 0, 1, 5, 5, -4 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Shop4" type="MeshInstance" parent="FarmShops"]
+transform = Transform( 4, 0, 0, 0, 5, 0, 0, 0, 1, 15, 5, -4 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Viewport" type="Viewport" parent="FarmShops"]
+size = Vector2( 200, 200 )
+render_target_v_flip = true
+
+[node name="Label" type="Label" parent="FarmShops/Viewport"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "ASDASDASD
+"
+
+[node name="MeshInstance" type="MeshInstance" parent="FarmShops"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 8 )
+
+[node name="Inventories" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Inventories"]
+transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 2, -7, 0, -1 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Inventories"]
+transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 2, 7, 0, -1 )
+mesh = SubResource( 5 )
+material/0 = null
