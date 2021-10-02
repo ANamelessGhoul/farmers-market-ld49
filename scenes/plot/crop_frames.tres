@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=2]
+
+[ext_resource path="res://sprites/crops/wheat/wheat_crop_2.png" type="Texture" id=1]
+[ext_resource path="res://sprites/crops/wheat/wheat_crop_1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/crops/beet/beet_crop2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/crops/wheat/wheat_crop_3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/crops/wheat/wheat_crop_4.png" type="Texture" id=5]
+[ext_resource path="res://sprites/crops/beet/beet_crop1.png" type="Texture" id=6]
+[ext_resource path="res://sprites/crops/beet/beet_crop3.png" type="Texture" id=7]
+[ext_resource path="res://sprites/crops/beet/beet_crop4.png" type="Texture" id=8]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "wheat",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "beet",
+"speed": 1.0
+} ]
