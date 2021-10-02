@@ -14,6 +14,10 @@ config/name="LudumDare49"
 run/main_scene="res://scenes/world/world.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameLoop="*res://autoload/game_loop.gd"
+
 [display]
 
 window/size/width=1600
