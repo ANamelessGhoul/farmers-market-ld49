@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprites/crops/wheat/WheatIcon.png" type="Texture" id=1]
+[ext_resource path="res://sprites/objects/CircleProgressFull.png" type="Texture" id=2]
+[ext_resource path="res://sprites/objects/CircleProgress.png" type="Texture" id=3]
+[ext_resource path="res://scenes/inventory_crop/inventory_crop.gd" type="Script" id=4]
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("Viewport")
+
+[node name="InventoryCrop" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 100, 100 )
+transparent_bg = true
+render_target_v_flip = true
+
+[node name="TextureProgress" type="TextureProgress" parent="Viewport"]
+margin_right = 100.0
+margin_bottom = 100.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+fill_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DecaySprite" type="Sprite3D" parent="."]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.546135, -0.484714 )
+visible = false
+modulate = Color( 1, 1, 1, 0.862745 )
+texture = SubResource( 1 )
+
+[node name="CropSprite" type="Sprite3D" parent="."]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0 )
+visible = false
+axis = 1
+texture = ExtResource( 1 )
