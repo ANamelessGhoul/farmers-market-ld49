@@ -3,12 +3,12 @@
 [ext_resource path="res://scenes/billboard/billboard.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Kenney Pixel Square.ttf" type="DynamicFontData" id=2]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 outline_size = 2
 outline_color = Color( 0.2, 0.2, 0.2, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="ViewportTexture" id=1]
+[sub_resource type="ViewportTexture" id=2]
 viewport_path = NodePath("Viewport")
 
 [node name="Billboard" type="Spatial"]
@@ -18,17 +18,21 @@ label_text = "BUY 100$"
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 100, 50 )
 transparent_bg = true
+msaa = 3
+fxaa = true
 render_target_v_flip = true
+gui_disable_input = true
 
 [node name="Label" type="Label" parent="Viewport"]
 margin_right = 100.0
 margin_bottom = 50.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "BUY 100$"
 align = 1
 valign = 1
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.06
 double_sided = false
-texture = SubResource( 1 )
+texture = SubResource( 2 )
