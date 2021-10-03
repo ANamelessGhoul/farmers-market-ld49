@@ -19,16 +19,22 @@ script = ExtResource( 3 )
 
 [node name="Front" type="AnimatedSprite3D" parent="Animation"]
 transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 1, 0, 1.5, 1 )
+cast_shadow = 2
+alpha_cut = 2
 frames = ExtResource( 1 )
 animation = "wheat"
 
 [node name="Center" type="AnimatedSprite3D" parent="Animation"]
 transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 1, 0, 1.5, 0 )
+cast_shadow = 2
+alpha_cut = 2
 frames = ExtResource( 1 )
 animation = "wheat"
 
 [node name="Back" type="AnimatedSprite3D" parent="Animation"]
 transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 1, 0, 1.5, -1 )
+cast_shadow = 2
+alpha_cut = 2
 frames = ExtResource( 1 )
 animation = "wheat"
 
