@@ -14,7 +14,9 @@ var sell_amount: int = 100 setget _set_sell_amount
 onready var buy_button = $BuyButton
 onready var sell_button = $SellButton
 onready var value_graph = $LineGraph
-onready var crop_icon = $IconFrame/CropIcon
+onready var crop_icon: Sprite3D = $IconFrame/CropIcon
+onready var success_sound: AudioStreamPlayer = $SucessSound
+onready var failure_sound: AudioStreamPlayer = $FailureSound
 
 func _ready():
 	self.buy_amount = buy_starting
@@ -30,11 +32,19 @@ func _buy_clicked():
 		var success: bool = Farm.add_crop(crop_type)
 		if success:
 			Money.money -= Market.crop_values[crop_type].buy
+			success_sound.play()
+		else:
+			failure_sound.play()
+	else:
+		failure_sound.play()
 
 func _sell_clicked():
 	var success: bool = Inventory.remove_crop(crop_type)
 	if success:
 		Money.money += Market.crop_values[crop_type].sell
+		success_sound.play()
+	else:
+		failure_sound.play()
 
 func _set_buy_amount(buy: int):
 	buy_amount = buy

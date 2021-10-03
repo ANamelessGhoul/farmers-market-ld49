@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/plot/crop_frames.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scenes/plot/plot.gd" type="Script" id=2]
 [ext_resource path="res://scenes/plot/plot_animation.gd" type="Script" id=3]
 [ext_resource path="res://scenes/plot/crop_plot_model.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sounds/harvest1.wav" type="AudioStream" id=5]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -45,5 +46,10 @@ transform = Transform( -3.49691e-08, 0, 1, 0, 0.8, 0, -0.8, 0, -4.37114e-08, 0, 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.105653, 0 )
 shape = SubResource( 2 )
+
+[node name="HarvestSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -6.977
+pitch_scale = 1.5
 
 [connection signal="input_event" from="Area" to="." method="_on_Area_input_event"]

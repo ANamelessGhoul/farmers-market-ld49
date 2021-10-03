@@ -12,6 +12,7 @@ var growth_tick: int = 0
 var current_crop_data: Dictionary = {}
 
 onready var animator = $Animation
+onready var harvest_sound: AudioStreamPlayer = $HarvestSound
 
 func _ready():
 	var _e = GameLoop.connect("tick", self, "_on_GameLoop_tick")
@@ -21,6 +22,7 @@ func harvest():
 	var success = Inventory.add_crop(crop_type)
 	if success:
 		set_crop_type(CROP_DATA.CROPS.NONE)
+		harvest_sound.play()
 
 func grow():
 	if growth_stage == MAX_GROWTH:

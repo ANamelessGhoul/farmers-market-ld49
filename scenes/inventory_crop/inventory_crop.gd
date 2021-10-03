@@ -9,13 +9,14 @@ var lifetime = 10 setget _set_lifetime
 onready var crop_sprite: Sprite3D = $CropSprite
 onready var decay_sprite: Sprite3D = $DecaySprite
 onready var decay_progress: TextureProgress = $Viewport/TextureProgress
-
+onready var decay_sound: AudioStreamPlayer = $DecaySound
 
 func decay_tick():
 	if crop_type != CROP_DATA.CROPS.NONE:
 		decay_progress.value -= 1
 		if decay_progress.value == 0:
 			_set_crop_type(CROP_DATA.CROPS.NONE)
+			decay_sound.play()
 	
 
 func _set_crop_type(type: int):
