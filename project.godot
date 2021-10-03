@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="LudumDare49"
-run/main_scene="res://scenes/world/world.tscn"
+run/main_scene="res://scenes/menu/menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -42,6 +42,7 @@ Farm="*res://autoload/farm.gd"
 
 window/size/width=1600
 window/size/height=900
+window/size/fullscreen=true
 window/stretch/aspect="keep_height"
 
 [importer_defaults]
@@ -57,7 +58,7 @@ texture={
 "flags/filter": false,
 "flags/mipmaps": false,
 "flags/repeat": 0,
-"flags/srgb": 2,
+"flags/srgb": 1,
 "process/HDR_as_SRGB": false,
 "process/fix_alpha_border": true,
 "process/invert_color": false,
