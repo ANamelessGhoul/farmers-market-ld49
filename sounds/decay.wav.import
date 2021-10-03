@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/decay.wav-7dc7d037dad3b643bacf3b641a0e760b.sample"
+
+[deps]
+
+source_file="res://sounds/decay.wav"
+dest_files=[ "res://.import/decay.wav-7dc7d037dad3b643bacf3b641a0e760b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
