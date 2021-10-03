@@ -18,7 +18,9 @@ func _ready():
 	set_crop_type(crop_type)
 
 func harvest():
-	Inventory.add_crop(crop_type)
+	var success = Inventory.add_crop(crop_type)
+	if success:
+		set_crop_type(CROP_DATA.CROPS.NONE)
 
 func grow():
 	if growth_stage == MAX_GROWTH:
@@ -54,7 +56,7 @@ func set_crop_type(type: int):
 func _clicked():
 	if growth_stage == MAX_GROWTH:
 		harvest()
-		set_crop_type(CROP_DATA.CROPS.NONE)
+		
 
 func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:
