@@ -18,7 +18,7 @@ func set_animation(animation: String):
 		animated_sprite.animation = animation
 		animated_sprite.frame = 0
 		
-	if current_animation == "pumpkin":
+	if current_animation == "pumpkin" or current_animation == "grape":
 		front_sprite.visible = false
 		back_sprite.visible = false
 	else:
