@@ -14,12 +14,14 @@ var sell_amount: int = 100 setget _set_sell_amount
 onready var buy_button = $BuyButton
 onready var sell_button = $SellButton
 onready var value_graph = $LineGraph
+onready var crop_icon = $IconFrame/CropIcon
 
 func _ready():
 	self.buy_amount = buy_starting
 	self.sell_amount = sell_starting
 	
 	var _e = Market.connect("crop_values_changed", self, "_on_Market_crop_values_changed")
+	crop_icon.texture = CROP_DATA.CROP_ICONS[crop_type]
 
 
 func _buy_clicked():
