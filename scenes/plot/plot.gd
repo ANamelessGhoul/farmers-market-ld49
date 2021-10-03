@@ -15,7 +15,7 @@ onready var animator = $Animation
 
 func _ready():
 	var _e = GameLoop.connect("tick", self, "_on_GameLoop_tick")
-	_set_crop_type(crop_type)
+	set_crop_type(crop_type)
 
 func harvest():
 	Inventory.add_crop(crop_type)
@@ -38,7 +38,7 @@ func _set_growth_stage(stage: int):
 	growth_stage = stage
 	animator.set_frame(growth_stage)
 
-func _set_crop_type(type: int):
+func set_crop_type(type: int):
 	crop_type = type
 	
 	if crop_type == CROP_DATA.CROPS.NONE:
@@ -54,7 +54,7 @@ func _set_crop_type(type: int):
 func _clicked():
 	if growth_stage == MAX_GROWTH:
 		harvest()
-		_set_crop_type(CROP_DATA.CROPS.NONE)
+		set_crop_type(CROP_DATA.CROPS.NONE)
 
 func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:
