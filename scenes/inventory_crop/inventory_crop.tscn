@@ -31,12 +31,14 @@ __meta__ = {
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.546135, -0.484714 )
 visible = false
 modulate = Color( 1, 1, 1, 0.862745 )
+alpha_cut = 2
 texture = SubResource( 1 )
 
 [node name="CropSprite" type="Sprite3D" parent="."]
 transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0 )
 visible = false
 axis = 1
+alpha_cut = 2
 texture = ExtResource( 1 )
 
 [node name="DecaySound" type="AudioStreamPlayer" parent="."]
