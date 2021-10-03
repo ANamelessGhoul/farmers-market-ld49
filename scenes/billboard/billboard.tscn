@@ -14,7 +14,7 @@ viewport_path = NodePath("Viewport")
 
 [node name="Billboard" type="Spatial"]
 script = ExtResource( 1 )
-label_text = "BUY 100$"
+label_text = ""
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 100, 50 )

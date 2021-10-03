@@ -46,8 +46,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0.269058 )
 [node name="BuyButton" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.30919, 0.229059 )
 
-[node name="Label" parent="BuyButton/Viewport" index="0"]
+[node name="Label" parent="BuyButton/Viewport" index="1"]
 custom_colors/font_color = Color( 0.85, 0.255, 0.255, 1 )
+text = ""
 
 [node name="Sprite3D" parent="BuyButton" index="1"]
 texture = SubResource( 2 )
@@ -60,8 +61,9 @@ shape = SubResource( 3 )
 [node name="SellButton" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30919, 0.229059 )
 
-[node name="Label" parent="SellButton/Viewport" index="0"]
+[node name="Label" parent="SellButton/Viewport" index="1"]
 custom_colors/font_color = Color( 0.255, 0.740917, 0.85, 1 )
+text = ""
 
 [node name="Sprite3D" parent="SellButton" index="1"]
 texture = SubResource( 4 )
