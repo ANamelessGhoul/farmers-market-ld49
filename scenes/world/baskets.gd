@@ -34,7 +34,7 @@ func remove_crop(crop_type: int) -> bool:
 		var crop := child as InventoryCrop
 		if crop.crop_type == crop_type:
 			if crop_with_least_time:
-				if crop_with_least_time.lifetime > crop.lifetime:
+				if crop_with_least_time.decay_progress.value > crop.decay_progress.value:
 					crop_with_least_time = crop
 			else:
 				crop_with_least_time = crop
