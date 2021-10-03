@@ -17,6 +17,13 @@ func set_animation(animation: String):
 		var animated_sprite := crop_sprite as AnimatedSprite3D
 		animated_sprite.animation = animation
 		animated_sprite.frame = 0
+		
+	if current_animation == "pumpkin":
+		front_sprite.visible = false
+		back_sprite.visible = false
+	else:
+		front_sprite.visible = true
+		back_sprite.visible = true
 
 func set_frame(frame: int):
 	for crop_sprite in sprites:
