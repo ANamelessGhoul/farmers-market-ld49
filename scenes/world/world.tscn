@@ -12,12 +12,12 @@
 [ext_resource path="res://sprites/objects/grass.png" type="Texture" id=10]
 [ext_resource path="res://main_env.tres" type="Environment" id=11]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=6]
 albedo_texture = ExtResource( 10 )
 uv1_scale = Vector3( 8, 8, 8 )
 
 [sub_resource type="PlaneMesh" id=2]
-material = SubResource( 1 )
+material = SubResource( 6 )
 size = Vector2( 256, 256 )
 
 [sub_resource type="PlaneMesh" id=3]
@@ -40,6 +40,9 @@ font_data = ExtResource( 5 )
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 14, 0 )
 light_color = Color( 0.901961, 0.85098, 0.658824, 1 )
+shadow_enabled = true
+shadow_bias = 0.05
+shadow_contact = 0.1
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 10, 23 )
@@ -124,18 +127,18 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 10 )
 [node name="FarmShops" type="Spatial" parent="."]
 
 [node name="Shop" parent="FarmShops" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -4 )
 
 [node name="Shop2" parent="FarmShops" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -4 )
 crop_type = 1
 
 [node name="Shop3" parent="FarmShops" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -4 )
 crop_type = 2
 
 [node name="Shop4" parent="FarmShops" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -4 )
 crop_type = 3
 
 [node name="Baskets" type="Spatial" parent="."]
@@ -149,7 +152,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 0, 
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 0, 0 )
 
 [node name="Inventory" type="Spatial" parent="Baskets"]
-transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -7, 1.45, -9.53674e-07 )
+transform = Transform( 1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -7, 1.15, 0 )
 
 [node name="InventoryCrop" parent="Baskets/Inventory" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, 0, -0.744 )
