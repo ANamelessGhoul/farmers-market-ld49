@@ -30,6 +30,7 @@ var crop_values: Dictionary = {
 
 func _ready():
 	var _e = GameLoop.connect("tick", self, "_on_GameLoop_tick")
+	call_deferred("emit_signal", "crop_values_changed", crop_values)
 
 
 func mutate_crop_values():
