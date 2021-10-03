@@ -39,5 +39,5 @@ const CROP_ICONS: Dictionary = {
 	CROPS.WHEAT: preload("res://sprites/crops/wheat/WheatIcon.png"),
 	CROPS.BEET: preload("res://sprites/crops/beet/beet_icon.png"),
 	CROPS.PUMPKIN: preload("res://sprites/crops/pumpkin/pumpkin_icon.png"),
-	CROPS.GRAPE: null,
+	CROPS.GRAPE: preload("res://sprites/crops/grape/grape_icon.png"),
 }
