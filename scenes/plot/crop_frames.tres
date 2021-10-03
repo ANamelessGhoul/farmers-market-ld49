@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=9 format=2]
+[gd_resource type="SpriteFrames" load_steps=13 format=2]
 
 [ext_resource path="res://sprites/crops/wheat/wheat_crop_2.png" type="Texture" id=1]
 [ext_resource path="res://sprites/crops/wheat/wheat_crop_1.png" type="Texture" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://sprites/crops/beet/beet_crop1.png" type="Texture" id=6]
 [ext_resource path="res://sprites/crops/beet/beet_crop3.png" type="Texture" id=7]
 [ext_resource path="res://sprites/crops/beet/beet_crop4.png" type="Texture" id=8]
+[ext_resource path="res://sprites/crops/pumpkin/pumpkin_crop2.png" type="Texture" id=9]
+[ext_resource path="res://sprites/crops/pumpkin/pumpkin_crop3.png" type="Texture" id=10]
+[ext_resource path="res://sprites/crops/pumpkin/pumpkin_crop1.png" type="Texture" id=11]
+[ext_resource path="res://sprites/crops/pumpkin/pumpkin_crop4.png" type="Texture" id=12]
 
 [resource]
 animations = [ {
@@ -20,4 +24,9 @@ animations = [ {
 "loop": true,
 "name": "beet",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "pumpkin",
+"speed": 5.0
 } ]
