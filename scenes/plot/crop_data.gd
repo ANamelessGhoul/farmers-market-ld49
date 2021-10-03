@@ -21,6 +21,13 @@ const CROP_VALUES: Dictionary = {
 	CROPS.GRAPE: 100,
 }
 
+const CROP_MUTATION_STEP: Dictionary = {
+	CROPS.WHEAT: 5,
+	CROPS.BEET: 10,
+	CROPS.PUMPKIN: 20,
+	CROPS.GRAPE: 10,
+}
+
 const CROP_DECAY: Dictionary = {
 	CROPS.WHEAT: 30,
 	CROPS.BEET: 20,

@@ -3,7 +3,6 @@ extends Node
 signal crop_values_changed
 
 const CROP_DATA = preload("res://scenes/plot/crop_data.gd")
-const MUTATION_STEP = 5
 const APPROACH_MEAN_CHANCE = 30
 const NEGATIVE_MUTATION_CHANCE = 20
 const POSITIVE_MUTATION_CHANCE = 20
@@ -35,6 +34,7 @@ func _ready():
 
 func mutate_crop_values():
 	for crop_type in crop_values:
+		var mutation_step = CROP_DATA.CROP_MUTATION_STEP[crop_type]
 		
 		# Buy mutation
 		var random_factor = randi() % 100
@@ -43,14 +43,14 @@ func mutate_crop_values():
 			if crop_values[crop_type].buy != CROP_DATA.CROP_VALUES[crop_type]:
 				# Buy value approaches default
 				if crop_values[crop_type].buy > CROP_DATA.CROP_VALUES[crop_type]:
-					crop_values[crop_type].buy -= MUTATION_STEP
+					crop_values[crop_type].buy -= mutation_step
 				else:
-					crop_values[crop_type].buy += MUTATION_STEP
+					crop_values[crop_type].buy += mutation_step
 		
 		elif randi() % 100 < NEGATIVE_MUTATION_CHANCE + APPROACH_MEAN_CHANCE:
-			crop_values[crop_type].buy += MUTATION_STEP
+			crop_values[crop_type].buy += mutation_step
 		else:
-			crop_values[crop_type].buy -= MUTATION_STEP
+			crop_values[crop_type].buy -= mutation_step
 		
 		# Sell mutation
 		random_factor = randi() % 100
@@ -59,14 +59,14 @@ func mutate_crop_values():
 			if crop_values[crop_type].sell != CROP_DATA.CROP_VALUES[crop_type]:
 				# Buy value approaches default
 				if crop_values[crop_type].sell > CROP_DATA.CROP_VALUES[crop_type]:
-					crop_values[crop_type].sell -= MUTATION_STEP
+					crop_values[crop_type].sell -= mutation_step
 				else:
-					crop_values[crop_type].sell += MUTATION_STEP
+					crop_values[crop_type].sell += mutation_step
 		
 		elif random_factor < NEGATIVE_MUTATION_CHANCE + APPROACH_MEAN_CHANCE:
-			crop_values[crop_type].sell -= MUTATION_STEP
+			crop_values[crop_type].sell -= mutation_step
 		elif random_factor < NEGATIVE_MUTATION_CHANCE + APPROACH_MEAN_CHANCE + POSITIVE_MUTATION_CHANCE:
-			crop_values[crop_type].sell += MUTATION_STEP
+			crop_values[crop_type].sell += mutation_step
 			
 	emit_signal("crop_values_changed", crop_values)
 
