@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://sprites/objects/ground.png" type="Texture" id=1]
 [ext_resource path="res://scenes/shop/shop.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/basket/basket.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/inventory_crop/inventory_crop.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/world/farm_plots.gd" type="Script" id=8]
+[ext_resource path="res://scenes/world/gui/money_label.gd" type="Script" id=9]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 50, 50 )
@@ -224,6 +225,7 @@ margin_right = 201.0
 margin_bottom = 98.0
 custom_fonts/font = SubResource( 3 )
 text = "100$"
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
