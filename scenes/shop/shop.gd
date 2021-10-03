@@ -23,10 +23,14 @@ func _ready():
 
 
 func _buy_clicked():
-	buy_button.label_text = "BUY 200$"
+	var success: bool = Farm.add_crop(crop_type)
+	if success:
+		Money.money -= Market.crop_values[crop_type].buy
 
 func _sell_clicked():
-	sell_button.label_text = "SELL 200$"
+	var success: bool = Inventory.remove_crop(crop_type)
+	if success:
+		Money.money += Market.crop_values[crop_type].sell
 
 func _set_buy_amount(buy: int):
 	buy_amount = buy

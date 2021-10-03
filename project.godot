@@ -10,11 +10,17 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Spatial",
+"class": "FarmPlot",
+"language": "GDScript",
+"path": "res://scenes/plot/plot.gd"
+}, {
+"base": "Spatial",
 "class": "InventoryCrop",
 "language": "GDScript",
 "path": "res://scenes/inventory_crop/inventory_crop.gd"
 } ]
 _global_script_class_icons={
+"FarmPlot": "",
 "InventoryCrop": ""
 }
 
@@ -29,6 +35,8 @@ config/icon="res://icon.png"
 GameLoop="*res://autoload/game_loop.gd"
 Market="*res://autoload/market.gd"
 Inventory="*res://autoload/inventory.gd"
+Money="*res://autoload/money.gd"
+Farm="*res://autoload/farm.gd"
 
 [display]
 

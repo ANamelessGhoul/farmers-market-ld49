@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://sprites/objects/ground.png" type="Texture" id=1]
 [ext_resource path="res://scenes/shop/shop.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/plot/plot.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/world/baskets.gd" type="Script" id=4]
+[ext_resource path="res://fonts/Kenney Pixel Square.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://scenes/basket/basket.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/inventory_crop/inventory_crop.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/world/farm_plots.gd" type="Script" id=8]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 50, 50 )
@@ -13,6 +15,14 @@ size = Vector2( 50, 50 )
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 1 )
 uv1_scale = Vector3( 25, 25, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+outline_size = 8
+outline_color = Color( 0.2, 0.2, 0.2, 1 )
+extra_spacing_top = -16
+extra_spacing_bottom = -8
+font_data = ExtResource( 5 )
 
 [node name="World" type="Spatial"]
 
@@ -29,6 +39,7 @@ mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
 [node name="FarmPlots" type="Spatial" parent="."]
+script = ExtResource( 8 )
 
 [node name="FarmPlot" parent="FarmPlots" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 2 )
@@ -182,3 +193,44 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8, 0, -0.744 )
 
 [node name="InventoryCrop20" parent="Baskets/Inventory" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8, 0, 0.750001 )
+
+[node name="GUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopBar" type="HBoxContainer" parent="GUI"]
+anchor_right = 1.0
+margin_bottom = 100.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/TopBar"]
+margin_right = 226.0
+margin_bottom = 100.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+
+[node name="Label" type="Label" parent="GUI/TopBar/MarginContainer"]
+margin_left = 25.0
+margin_top = 26.0
+margin_right = 201.0
+margin_bottom = 98.0
+custom_fonts/font = SubResource( 3 )
+text = "100$"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer" type="Control" parent="GUI/TopBar"]
+margin_left = 230.0
+margin_right = 1600.0
+margin_bottom = 100.0
+mouse_filter = 2
+size_flags_horizontal = 3
