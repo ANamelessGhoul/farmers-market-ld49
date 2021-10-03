@@ -1,15 +1,13 @@
 extends Node
 
-signal crop_added
-signal crop_sold
 
 var basket: Spatial
 
-func add_crop(crop: int):
-	emit_signal("crop_added", crop)
+func add_crop(crop: int) -> bool:
+	return basket.add_crop(crop)
 
-func sell_crop(crop: int):
-	emit_signal("crop_sold", crop)
+func remove_crop(crop: int) -> bool:
+	return basket.remove_crop(crop)
 
 func has_space() -> bool:
 	return basket.has_space()
