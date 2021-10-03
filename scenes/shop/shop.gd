@@ -23,9 +23,11 @@ func _ready():
 
 
 func _buy_clicked():
-	var success: bool = Farm.add_crop(crop_type)
-	if success:
-		Money.money -= Market.crop_values[crop_type].buy
+	var cost = Market.crop_values[crop_type].buy
+	if Money.money >= cost:
+		var success: bool = Farm.add_crop(crop_type)
+		if success:
+			Money.money -= Market.crop_values[crop_type].buy
 
 func _sell_clicked():
 	var success: bool = Inventory.remove_crop(crop_type)
