@@ -1,5 +1,5 @@
 extends Spatial
-
+class_name FarmPlot
 
 const CROP_DATA = preload("res://scenes/plot/crop_data.gd")
 
